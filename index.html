@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./static/css/main.css">
+    <title>About me</title>
+</head>
+<body>
+    <div id="top_level_div">
+        <div id="introduction_div">
+            <div id="profile_pic_div">
+                <!-- 아래 src 속성에 프로필 사진 경로설정 -->
+                <img id="profile_pic" src="./static/KakaoTalk_20210827_200323695.jpg">
+            </div>
+            <div id="profile_log_div">
+                <p>
+                    <!-- 여기에 자기소개 디스크립션 -->
+                    Hi, I’m Nahyun <br>
+                    I’m interested in New Tech <br>
+                    I’m currently learning Python <br>
+                    I’ll become a next-generation tech professional <br>
+                    You can reach me via nhkim1002@gmail.com <br>
+                </p>
+            </div>
+            <hr>
+            <div id="projects_div">
+                <div id="project_1_div_toggle" data-folding="true">Nahyun</div>
+                <div id="project_1_div">
+                    <div class="project_container_div">
+                        <div class="project_image_div">
+                            <!-- src 속성에 프로젝트 1 대표 이미지 -->
+                            <img src="./static/KakaoTalk_20210827_200443925.jpg">
+                        </div>
+                        <div class="project_description_div">
+                            <p>
+                                <!-- 여기에 프로젝트 1 디스크립션 -->
+                                Project Nahyun <br>
+                                Python learning <br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="project_2_div_toggle" data-folding="true">Project 2</div>
+                <div id="project_2_div">
+                    <div class="project_container_div">
+                        <div class="project_image_div">
+                            <!-- src 속성에 프로젝트 2 대표 이미지 -->
+                            <img src="./static/KakaoTalk_20210827_200323695.jpg">
+                        </div>
+                        <div class="project_description_div">
+                            <p>
+                                <!-- 여기에 프로젝트 2 디스크립션 -->
+                                Project Nahyun2 <br>
+                                Diet <br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <hr>
+        </div>
+    </div>
+    <div id="external_links_div">
+        <span><a href="mailto:nhkim1002@gmail.com">Mail</a></span>    <!-- 이메일 주소 -->
+        <span><a href="https://github.com/NH1002" target="_blank">Github</a></span>    <!-- target에 Github 주소 -->
+        <span><a href="#" target="_blank">SNS</a></span>    <!-- target에 SNS 주소 -->
+    </div>
+</body>
+<script>
+    window.onload = () => {
+        const project1Toggle = document.querySelector('#project_1_div_toggle');
+        const project1Content = document.querySelector('#project_1_div > div.project_container_div');
+        const project1ContentImage = document.querySelector('#project_1_div > div.project_container_div > div.project_image_div');
+        const project1ContentDesc = document.querySelector('#project_1_div > div.project_container_div > div.project_description_div');
+
+        const project2Toggle = document.querySelector('#project_2_div_toggle');
+        const project2Content = document.querySelector('#project_2_div > div.project_container_div');
+        const project2ContentImage = document.querySelector('#project_2_div > div.project_container_div > div.project_image_div');
+        const project2ContentDesc = document.querySelector('#project_2_div > div.project_container_div > div.project_description_div');
+
+        const project3Toggle = document.querySelector('#project_3_div_toggle');
+        const project3Content = document.querySelector('#project_3_div > div.project_container_div');
+        const project3ContentImage = document.querySelector('#project_3_div > div.project_container_div > div.project_image_div');
+        const project3ContentDesc = document.querySelector('#project_3_div > div.project_container_div > div.project_description_div');
+
+        project1Toggle.addEventListener('click', (event) => {
+
+            var projectContentImageHeight = project1ContentImage.scrollHeight;
+            var projectContentDescHeight = project1ContentDesc.scrollHeight;
+            var projectContentContainerHeight = Math.max(projectContentImageHeight, projectContentDescHeight);
+
+            if(event.target.dataset.folding == 'true'){
+                event.target.dataset.folding = 'false';
+                project1Content.style.height = projectContentContainerHeight + 'px';
+            }
+            else{
+                event.target.dataset.folding = 'true';
+                project1Content.style.height = '0px';
+            }
+        });
+
+        project2Toggle.addEventListener('click', (event) => {
+
+            var projectContentImageHeight = project2ContentImage.scrollHeight;
+            var projectContentDescHeight = project2ContentDesc.scrollHeight;
+            var projectContentContainerHeight = Math.max(projectContentImageHeight, projectContentDescHeight);
+
+            if(event.target.dataset.folding == 'true'){
+                event.target.dataset.folding = 'false';
+                project2Content.style.height = projectContentContainerHeight + 'px';
+            }
+            else{
+                event.target.dataset.folding = 'true';
+                project2Content.style.height = '0px';
+            }
+        });
+
+        project3Toggle.addEventListener('click', (event) => {
+
+            var projectContentImageHeight = project3ContentImage.scrollHeight;
+            var projectContentDescHeight = project3ContentDesc.scrollHeight;
+            var projectContentContainerHeight = Math.max(projectContentImageHeight, projectContentDescHeight);
+
+            if(event.target.dataset.folding == 'true'){
+                event.target.dataset.folding = 'false';
+                project3Content.style.height = projectContentContainerHeight + 'px';
+            }
+            else{
+                event.target.dataset.folding = 'true';
+                project3Content.style.height = '0px';
+            }
+        });
+    }
+</script>
+</html>
